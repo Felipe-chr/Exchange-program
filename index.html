@@ -3,14 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <title>AGÊNCIA DE INTERCÂMBIO</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+<style>
+        html {
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 0;
+        }
+        .section{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        }
+        .image{
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+        }
+        h1{
+            
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            color: white;
+            font-size: 40px; 
+            letter-spacing: 4px; 
+            text-transform: uppercase;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            text-align: left;
+        }
+
+        
+        .container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0.4);
+            gap: 200px;
+        }
+        .box{
+            
+        }
+        .cadastro-bloco{
+            background-color: white;
+            height: 300px;
+            width: 500px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        .cadastro-grupo{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .cadastro-grupo label{
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        .cadastro-bloco input{
+            padding: 12px;
+            border: 1px solid gainsboro;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input{
+            height: 8%;
+            width: 65%;
+            }
+</style>    
 </head>
 <body>
     <section class="section">
         <img class="image" src="Assets\Imagem.malta.webp" alt="malta"> 
     <div class="container">
         <div class="box">
-            <h1>VENHA ESTUDAR EM MALTA!!!</h1>
+            <h1>VENHA ESTUDAR<br>EM MALTA</h1>
+        </div>
+        <div class="cadastro-bloco">
+            <div class="cadastro-grupo">
+                <p>Nome<span style="color: red;">*</span></p>
+                <input type="text" placeholder="Nome completo (obrigatório)">
+            </div>
+            <div class="cadastro-grupo">
+                <p>E-mail<span style="color: red;">*</span></p>
+            <input type="email" placeholder="E-mail (obrigatório)">
+            </div>
+            <div class="cadastro-grupo">
+                <p>Telefone<span style="color: red;">*</span></p>
+            <input type="text" placeholder="Telefone (obrigatório)">
+            </div>
         </div>
     </div>
 
