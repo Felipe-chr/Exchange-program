@@ -63,8 +63,8 @@
         }
         .cadastro-bloco{
             background-color: white;
-            height: 300px;
-            width: 500px;
+            min-height: 300px;
+            min-width: 500px;
             border-radius: 15px;
             display: flex;
             flex-direction: column;
@@ -92,6 +92,19 @@
             height: 8%;
             width: 65%;
             }
+        .cadastro-bloco button{
+            color: white;
+            background-color: rgb(52, 52, 223);
+            border: none;
+            gap: 10px;
+            padding: 12px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 13px;
+            cursor: pointer;
+        }
 </style>    
 </head>
 <body>
@@ -104,20 +117,42 @@
         <div class="cadastro-bloco">
             <div class="cadastro-grupo">
                 <p>Nome<span style="color: red;">*</span></p>
-                <input type="text" placeholder="Nome completo (obrigatório)">
+                <input id="nomeInput" type="text" placeholder="Nome completo (obrigatório)">
             </div>
             <div class="cadastro-grupo">
                 <p>E-mail<span style="color: red;">*</span></p>
-            <input type="email" placeholder="E-mail (obrigatório)">
+            <input id="emailInput" type="email" placeholder="E-mail (obrigatório)">
             </div>
             <div class="cadastro-grupo">
                 <p>Telefone<span style="color: red;">*</span></p>
-            <input type="text" placeholder="Telefone (obrigatório)">
+            <input id="teleInput" type="text" placeholder="Telefone (obrigatório)">
+            <button id="buttonCadastro">CADASTRAR</button>
             </div>
         </div>
     </div>
 
     </section>
+
+    <script>
+        const button = document.getElementById("buttonCadastro");
+        const inputNome = document.getElementById("nomeInput");
+        const inputEmail = document.getElementById("emailInput");
+        const inputTelefone = document.getElementById("teleInput");
+
+        let nomeCliente;
+        let emailCliente;
+        let telefoneCliente;
+
+        button.addEventListener('click', () => {
+            nomeCliente=inputNome.value;
+            emailCliente=inputEmail.value;
+            telefoneCliente=inputTelefone.value;
+            if(!nomeCliente){
+                
+            }
+        })
+
+</script>
 
 </body>
 </html>
