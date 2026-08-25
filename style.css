@@ -1,36 +1,110 @@
-        html {
-            scroll-behavior: smooth;
-            font-family: Arial, sans-serif;
+ html, body {
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
-        body{
-            margin: 0;
-        }
-        .section{
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        }
-        .image{
-            background-image: linear-gradient((rgba0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), url"Assets\Imagem.malta.webp");
-            height: 100vh;
+        .section {
+            min-height: 100vh;
             width: 100vw;
+            position: relative;
+            background-image: url('Assets/Imagem.malta.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        h1{
-            color: white;
-            font-size: 30px;
 
-        }
-        .container{
+        .container {
+            width: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            background: rgba(0, 0, 0, 0.5); 
+            gap: 100px;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        .box{
 
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            color: white;
+            font-size: 40px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
+
+        .cadastro-bloco {
+            background-color: white;
+            min-height: 300px;
+            width: 400px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        .cadastro-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .cadastro-grupo p {
+            margin: 0;
+            font-weight: bold;
+            color: rgb(50, 50, 50);
+            font-size: 14px;
+        }
+
+        .cadastro-bloco input {
+            padding: 12px;
+            border: 1px solid gainsboro;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .erro-input {
+            border: 2px solid red !important;
+        }
+
+        .cadastro-bloco button {
+            color: white;
+            background-color: rgb(52, 52, 223);
+            border: none;
+            padding: 14px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .cadastro-bloco button:hover {
+            background-color: rgb(35, 35, 180);
+        }
+
+        .erro-mensagem {
+            color: rgb(206, 0, 0);
+            font-size: 12px;
+            margin-top: 2px;
+            display: none;
+        }
+
+        .visivel {
+            display: block;
         }
