@@ -5,154 +5,192 @@
     <title>AGÊNCIA DE INTERCÂMBIO</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
-<style>
-        html {
-            scroll-behavior: smooth;
-            font-family: Arial, sans-serif;
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        html, body {
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
-        body{
-            margin: 0;
-        }
-        .section{
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
 
-        }
-        .image{
-            height: 100vh;
+        .section {
+            min-height: 100vh;
             width: 100vw;
-            object-fit: cover;
+            position: relative;
+            background-image: url('Assets/Imagem.malta.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        h1{
-            
-            font-family: 'Cinzel', serif;
-            font-weight: 800;
-            color: white;
-            font-size: 40px; 
-            letter-spacing: 4px; 
-            text-transform: uppercase;
-            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-            margin: 0;
-            text-align: left;
+        .section2 {
+            min-height: 100vh;
+            width: 100vw;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: rgb(220, 247, 255);
+            gap: 30px;
+        }
+        .bloco-texto{
+            color: rgb(22, 22, 22);
+            font-size: large;
+            margin-right: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .image2{
+            max-width: 700px;
+            max-height: 500px;
+            border-radius: 50px;
         }
 
-        
-        .container{
-            position: absolute;
-            top: 0;
-            left: 0;
+        .container {
             width: 100%;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            background: rgba(0.4);
-            gap: 200px;
+            background: rgba(0, 0, 0, 0.5);
+            gap: 100px;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        .box{
-            
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            color: white;
+            font-size: 40px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+            margin: 0;
         }
-        .cadastro-bloco{
+
+        .cadastro-bloco {
             background-color: white;
             min-height: 300px;
-            min-width: 500px;
+            width: 400px;
             border-radius: 15px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding-top: 10px;
-            padding-left: 10px;
+            gap: 15px;
+            padding: 25px;
+            box-sizing: border-box;
         }
-        .cadastro-grupo{
+
+        .cadastro-grupo {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 5px;
         }
-        .cadastro-grupo label{
-            color: rgb(0, 0, 0);
+
+        .cadastro-grupo p {
+            margin: 0;
+            font-weight: bold;
+            color: rgb(50, 50, 50);
             font-size: 14px;
-            font-family: Arial, sans-serif;
         }
-        .cadastro-bloco input{
+
+        .cadastro-bloco input {
             padding: 12px;
             border: 1px solid gainsboro;
             border-radius: 4px;
             font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
         }
-        input{
-            height: 8%;
-            width: 65%;
-            }
-        .cadastro-bloco button{
+
+        .erro-input {
+            border: 2px solid red !important;
+        }
+
+        .cadastro-bloco button {
             color: white;
             background-color: rgb(52, 52, 223);
             border: none;
-            gap: 10px;
-            padding: 12px;
-            margin-bottom: 20px;
-            margin-right: 10px;
+            padding: 14px;
             border-radius: 4px;
-            margin-top: 20px;
-            font-size: 13px;
+            font-size: 14px;
+            font-weight: bold;
             cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
         }
-</style>    
+
+        .cadastro-bloco button:hover {
+            background-color: rgb(35, 35, 180);
+        }
+
+        .erro-mensagem {
+            color: rgb(206, 0, 0);
+            font-size: 12px;
+            margin-top: 2px;
+            display: none;
+        }
+
+        .visivel {
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
     <section class="section">
-        <img class="image" src="Assets\Imagem.malta.webp" alt="malta"> 
-    <div class="container">
-        <div class="box">
-            <h1>VENHA ESTUDAR<br>EM MALTA</h1>
+        <div class="container">
+            <div class="box">
+                <h1>VENHA ESTUDAR<br>EM MALTA</h1>
+            </div>
+            
+            <div class="cadastro-bloco">
+                <div class="cadastro-grupo">
+                    <p>Nome<span style="color: red;">*</span></p>
+                    <input id="nomeInput" type="text" placeholder="Nome completo (obrigatório)">
+                    <span class="erro-mensagem" id="erroNome">Insira um nome válido.</span>
+                </div>
+
+                <div class="cadastro-grupo">
+                    <p>E-mail<span style="color: red;">*</span></p>
+                    <input id="emailInput" type="email" placeholder="E-mail (obrigatório)">
+                    <span class="erro-mensagem" id="erroEmail">Insira um email válido.</span>
+                </div>
+
+                <div class="cadastro-grupo">
+                    <p>Telefone<span style="color: red;">*</span></p>
+                    <input id="teleInput" type="text" placeholder="Telefone (obrigatório)">
+                    <span class="erro-mensagem" id="erroTele">Insira um telefone válido.</span>
+                    <button id="buttonCadastro">CADASTRAR</button>
+                </div>
+            </div>
         </div>
-        <div class="cadastro-bloco">
-            <div class="cadastro-grupo">
-                <p>Nome<span style="color: red;">*</span></p>
-                <input id="nomeInput" type="text" placeholder="Nome completo (obrigatório)">
-            </div>
-            <div class="cadastro-grupo">
-                <p>E-mail<span style="color: red;">*</span></p>
-            <input id="emailInput" type="email" placeholder="E-mail (obrigatório)">
-            </div>
-            <div class="cadastro-grupo">
-                <p>Telefone<span style="color: red;">*</span></p>
-            <input id="teleInput" type="text" placeholder="Telefone (obrigatório)">
-            <button id="buttonCadastro">CADASTRAR</button>
-            </div>
-        </div>
-    </div>
+    </section>
+    <section class="section2">
+        <div class="image2"><img class="image2" src="Assets\Imagem2.jpg.webp" alt="Imagem2"></div>
+        <div class="bloco-texto"><p>Malta é um destino que combina estudo, praia, história e uma rotina internacional.
+             Fazer um intercâmbio por lá é uma oportunidade de aprender inglês no dia a dia,
+              conhecer pessoas de diferentes países e aproveitar um país com belas paisagens, cidades históricas e muito mais.<br><br>
+
+A experiência vai além da sala de aula. Nos momentos livres, você pode conhecer praias, explorar Gozo e Comino,
+ fazer passeios de barco, sair com outros estudantes ou simplesmente aproveitar a rotina local. A convivência com pessoas de diferentes
+  nacionalidades também faz com que o inglês esteja presente em situações reais do cotidiano.<br><br>
+
+Organizar um intercâmbio envolve várias escolhas, e nossa função é tornar esse processo mais simples.
+ Ajudamos você a escolher a escola e o curso, encontrar uma acomodação adequada e se preparar para a viagem,
+  além de oferecer suporte durante sua experiência em Malta. Assim, você pode viajar com mais tranquilidade e aproveitar o intercâmbio
+   da melhor forma.</p></div>
 
     </section>
 
-    <script>
-        const button = document.getElementById("buttonCadastro");
-        const inputNome = document.getElementById("nomeInput");
-        const inputEmail = document.getElementById("emailInput");
-        const inputTelefone = document.getElementById("teleInput");
-
-        let nomeCliente;
-        let emailCliente;
-        let telefoneCliente;
-
-        button.addEventListener('click', () => {
-            nomeCliente=inputNome.value;
-            emailCliente=inputEmail.value;
-            telefoneCliente=inputTelefone.value;
-            if(!nomeCliente){
-                
-            }
-        })
-
-</script>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
