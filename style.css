@@ -7,6 +7,7 @@
             overflow-x: hidden;
 
         }
+        
 
         .section {
             min-height: 100vh;
@@ -46,10 +47,31 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            background: linear-gradient(rgb(220, 247, 255), rgb(13, 104, 223)) ;
+            background: linear-gradient(rgb(220, 247, 255), rgb(13, 104, 223));
             gap: 30px;
-            padding: 10px;
-        }
+            
+            /* --- Ajustes para o Corte Diagonal --- */
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Cria a diagonal na base */
+            padding: 10px 10px 120px 10px; /* Aumentado o padding no fundo para o texto não sumir no corte */
+            margin-bottom: -8vh; /* Puxa a section 4 para baixo do corte, eliminando espaços brancos */
+            z-index: 1; /* Garante que ela fique por cima da section 4 */
+            }
+        .section4 {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Corrigido para empilhar o título, cards e botão */
+            background: rgb(220, 247, 255); /* Mantido o fundo claro */
+            gap: 60px; /* Reduzido levemente para melhor espaçamento */
+            padding: 120px 20px 40px 20px; /* Padding extra no topo para compensar a sobreposição da diagonal */
+            z-index: 0;
+            }
         .bloco-texto{
             color: rgb(22, 22, 22);
             font-size: large;
@@ -154,12 +176,94 @@
         .bloco-imagem{
             display: flex;
             flex-direction: column;
-            height: 500px;
-            width: 500px;
         }
+        .bloco-modelo{
+            display: flex;
+            flex-direction: row;
+        }
+        .bloco-imagem img{
+            height: 260px;
+            width: 260px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .bloco-imagem h2{
+            font-size:  30px;
+            color:azure
+        }
+        .bloco-imagem p{
+            color: azure;
+            font-size: 23px;
+        }
+        .section3-modelo{
+            display: flex;
+            flex-direction: column;
+        }
+        .section3-modelo h3{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 549;
+            color: rgb(0, 18, 99);
+            font-size: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+            align-self: center;
+        }
+        
         .section3 .container {
             align-items: flex-start; 
             padding-top: 80px;
             background: none;  
-            gap: 30px;          
+            gap: 80px;   
 }
+        .section4 {
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            
+        }
+        .section4 h4 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 549;
+        color: rgb(0, 18, 99);
+        font-size: 30px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+        text-align: center;
+        align-self: center;
+        }
+        .container-4 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            padding: 20px;
+        }
+        .section4 .bloco-imagem{
+            padding: 20px;
+            height: 230px;
+            margin-right: 100px;
+            margin-left: 100px;
+            min-width: 300px;
+            background-color: rgb(84, 133, 206);
+            border-radius: 20px;
+        }
+        .section4 button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: rgb(84, 133, 206);
+            cursor: pointer;
+            border: none;
+        }
+
+        .section4 button p{
+            color: azure;
+            font-size: larger;
+            margin: none;
+        }
