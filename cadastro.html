@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - InterMalta</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        background-color: #f4f7f6;
+        color: #333;
+    }
+
+    .imagem-topo {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+        text-align: center;
+        color: #1a365d;
+        margin-bottom: 30px;
+        font-size: 28px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        color: #2b6cb0;
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
+    }
+
+    .form-group-row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        flex: 1;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #4a5568;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="file"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cbd5e0;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+        background-color: #f8fafc;
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #3182ce;
+        background-color: #fff;
+    }
+
+    .btn-enviar {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #1a365d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: background-color 0.2s;
+    }
+    .btn-salvar {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #1a365d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: background-color 0.2s;
+    }
+
+    .btn-salvar:hover {
+        background-color: #2b6cb0;
+    }
+    .btn-salvarCSV {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #1e8035;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: background-color 0.2s;
+    }
+
+    .btn-salvarCSV:hover {
+        background-color: #3ba855;
+    }
+    .btn-enviar:hover {
+        background-color: #2b6cb0;
+    }
+
+    .status-pendente {
+        color: #dd6b20;
+        font-weight: bold;
+        background-color: #feebc8;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+    .botao{
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+    }
+        .status-aprovado {
+        color: #155724;
+        font-weight: bold;
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+.link-home {
+    color: inherit; 
+    text-decoration: none; 
+}
+
+.link-home:hover {
+    color: #2b6cb0;
+}
+
+</style>
+</head>
+<body>
+
+
+    <div class="container">
+<h1><a href="index.html" class="link-home">InterMalta</a> <br>Cadastro</h1>
+        
+        <form action="#" method="POST">
+            
+            <h2>Dados do Participante</h2>
+            
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" >
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf">
+                </div>
+                <div class="form-group">
+                    <label for="data_nasc">Data de Nascimento</label>
+                    <input type="text" id="data_nasc" name="data_nasc" >
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" >
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contato_emergencia">Contato de Emergência</label>
+                <input type="text" id="contato_emergencia" name="contato_emergencia" >
+            </div>
+
+            <h2>Responsável Financeiro</h2>
+
+            <div class="form-group">
+                <label for="resp_financeiro">Nome do Responsável</label>
+                <input type="text" id="resp_financeiro" name="resp_financeiro" >
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="cpf_resp">CPF do Responsável</label>
+                    <input type="text" id="cpf_resp" name="cpf_resp" >
+                </div>
+                <div class="form-group">
+                    <label for="tel_resp">Telefone do Responsável</label>
+                    <input type="text" id="tel_resp" name="tel_resp" >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email_resp">E-mail do Responsável</label>
+                <input type="email" id="email_resp" name="email_resp" >
+            </div>
+
+            <h2>Endereço de Cobrança</h2>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" name="cep" >
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" >
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" >
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group" style="flex: 2;">
+                    <label for="rua">Rua/Avenida</label>
+                    <input type="text" id="rua" name="rua" >
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" name="numero" >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" name="complemento" >
+            </div>
+
+            <h2>Informações de Pagamento</h2>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="moeda">Moeda do Programa</label>
+                    <input type="text" id="moeda" name="moeda">
+                </div>
+                <div class="form-group">
+                    <label for="forma_pagamento">Forma de Pagamento</label>
+                    <input type="text" id="forma_pagamento" name="forma_pagamento">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="num_cartao">Número do Cartão</label>
+                <input type="text" id="num_cartao" name="num_cartao" >
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" >
+                </div>
+                <div class="form-group">
+                    <label for="validade">Validade</label>
+                    <input type="text" id="validade" name="validade" >
+                </div>
+            </div>
+
+            <h2>Detalhes da Transação</h2>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="tipo_cobranca">Tipo de Cobrança</label>
+                    <input type="text" id="tipo_cobranca" name="tipo_cobranca"  >
+                </div>
+                <div class="form-group">
+                    <label for="parcela">Parcela Atual</label>
+                    <input type="text" id="parcela" name="parcela">
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="vencimento">Data de Vencimento</label>
+                    <input type="text" id="vencimento" name="vencimento"  >
+                </div>
+                <div class="form-group">
+                    <label for="recebimento">Data de Recebimento</label>
+                    <input type="text" id="recebimento" name="recebimento"  >
+                </div>
+            </div>
+
+                        <div class="form-group">
+                <label>Status da Transação</label>
+                <div id="status" class="status-pendente">Pendente</div>
+            </div>
+
+            <div class="form-group">
+                <label for="recibo">Anexo do Recibo</label>
+                <input type="file" id="recibo" name="recibo">
+            </div>
+
+            <!-- Alterado o tipo do botão Salvar para "button" -->
+<button id="botaoId" type="submit" class="btn-enviar">Finalizar Cadastro</button> 
+<button id="btnSalvar" type="button" class="btn-salvar">Salvar</button>
+<button id="btnSalvarCsv" type="button" class="btn-salvarCSV" >Salvar CSV</button>
+
+
+
+<script>
+const formulario = document.querySelector('form');
+const alunos = [];
+const mensagens = document.getElementById('status');
+
+formulario.addEventListener("submit", function(event){
+    event.preventDefault();
+    const formData = new FormData(formulario);
+    let formsValido = true;
+
+    for(let [chave, valor] of formData.entries()){
+        // Correção na checagem de arquivos vazios
+        if (valor instanceof File) {
+            if (valor.name === "") {
+                formsValido = false;
+                alert(`O campo de arquivo "${chave}" não foi preenchido!`);
+                break;
+            }
+        } else if (typeof valor === 'string' && valor.trim() === "") {
+            formsValido = false;
+            alert(`O campo "${chave}" não foi preenchido!`);
+            break;
+        }
+    }
+
+    if(!formsValido) return;
+
+    const dadosParticipante = Object.fromEntries(formData.entries());
+    aprovarTransacao();
+
+    // Correção: Extrai o nome do arquivo corretamente se ele existir
+    if(dadosParticipante.recibo && dadosParticipante.recibo instanceof File){
+        dadosParticipante.recibo = dadosParticipante.recibo.name;
+    }
+
+    alunos.push(dadosParticipante);
+    const dadosJSON = JSON.stringify(dadosParticipante);
+    console.log("JSON do aluno cadastrado:", dadosJSON);
+
+    setTimeout(function(){
+        formulario.reset();
+        resetarStatus();
+    }, 1500);
+});
+
+function aprovarTransacao() {
+    const statusDiv = document.getElementById('status');
+    if(statusDiv){
+        statusDiv.innerText = "Aprovado";
+        statusDiv.classList.remove('status-pendente');
+        statusDiv.classList.add('status-aprovado');
+    }
+}
+
+function resetarStatus(){
+    const statusDiv = document.getElementById('status');
+    if(statusDiv){
+        statusDiv.innerText = "Pendente";
+        statusDiv.classList.remove('status-aprovado');
+        statusDiv.classList.add('status-pendente');
+    }
+}
+
+// Evento do botão salvar corrigido
+document.getElementById('btnSalvar').addEventListener('click', function(){
+    // Correção: Adicionado 'alunos.length'
+    if(alunos.length === 0){ 
+        alert("Nenhum aluno cadastrado para enviar.");
+        return;
+    }
+
+    let texto = "CADASTRO DE ALUNO\n";
+    texto += "============================\n\n";
+
+    alunos.forEach(function (aluno, indice){
+        texto += `ALUNO ${indice + 1}\n`;
+        for(let [chave, valor] of Object.entries(aluno)){
+            const chaveFormatada = chave.charAt(0).toUpperCase() + chave.slice(1);
+            texto += `${chaveFormatada}: ${valor}\n`;
+        }
+        texto += "-----------------------\n";
+    });
+
+    const arquivo = new Blob([texto], {type: "text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(arquivo);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "alunos.txt";
+    link.click();
+    URL.revokeObjectURL(url);
+});
+
+document.getElementById('btnSalvarCsv').addEventListener('click', function(){
+
+    if(alunos.length === 0){
+        alert("Nenhum aluno cadastrado.");
+        return;
+    }
+
+    const colunas = Object.keys(alunos[0]);
+
+    const cabecalhoFormatado = colunas.map(coluna =>{
+        return coluna.charAt(0).toUpperCase() + coluna.slice(1);
+    }).join(";");
+
+    let linhasCSV = [cabecalhoFormatado];
+
+    alunos.forEach(function(aluno){
+        const linha = colunas.map(coluna =>{
+            const valor = aluno[coluna] ||"";
+            return String(valor).replace(/\n/g, " ");
+        }).join(";");
+
+        linhasCSV.push(linha);
+    });
+
+    const conteudoCSV = "\ufeff" + linhasCSV.join("\r\n");
+
+    const arquivo = new Blob([conteudoCSV], {type: "text/csv;charset=utf-8;"});
+    const url = URL.createObjectURL(arquivo);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "alunos.csv";
+    link.click();
+
+    URL.revokeObjectURL(url);
+});
+</script>
+
+
+</body>
+</html>

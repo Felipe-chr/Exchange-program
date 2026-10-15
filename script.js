@@ -34,7 +34,7 @@ button.addEventListener('click', () => {
         erroEmail.classList.remove("visivel");
     }
 
-    if (telefoneCliente === "") {
+    if (telefoneCliente === ""||/[^0-9()\s-\+]/.test(telefoneCliente)) {
         inputTelefone.classList.add("erro-input");
         erroTele.classList.add("visivel");
     } else {

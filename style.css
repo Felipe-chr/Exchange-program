@@ -49,12 +49,10 @@
             flex-direction: row;
             background: linear-gradient(rgb(220, 247, 255), rgb(13, 104, 223));
             gap: 30px;
-            
-            /* --- Ajustes para o Corte Diagonal --- */
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Cria a diagonal na base */
-            padding: 10px 10px 120px 10px; /* Aumentado o padding no fundo para o texto não sumir no corte */
-            margin-bottom: -8vh; /* Puxa a section 4 para baixo do corte, eliminando espaços brancos */
-            z-index: 1; /* Garante que ela fique por cima da section 4 */
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            padding: 10px 10px 120px 10px;
+            margin-bottom: -8vh;
+            z-index: 1; 
             }
         .section4 {
             min-height: 100vh;
@@ -66,10 +64,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Corrigido para empilhar o título, cards e botão */
-            background: rgb(220, 247, 255); /* Mantido o fundo claro */
-            gap: 60px; /* Reduzido levemente para melhor espaçamento */
-            padding: 120px 20px 40px 20px; /* Padding extra no topo para compensar a sobreposição da diagonal */
+            flex-direction: column; 
+            background: rgb(220, 247, 255);
+            gap: 60px; 
+            padding: 120px 20px 40px 20px; 
             z-index: 0;
             }
         .bloco-texto{
@@ -266,4 +264,12 @@
             color: azure;
             font-size: larger;
             margin: none;
+        }
+        .meu-botao {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
         }
